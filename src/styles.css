@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --bg-main: #0b1120;        /* Azul noche profundo y limpio */
+  --bg-card: #131d31;        /*  Azul pizarra sólido */
+  --border-card: #1e293b;    /*  Bordes definidos */
+  --accent-blue: #0284c7;    /*  Azul corporativo alegre */
+  --accent-cyan: #38bdf8;    /*  Cian fresco para destaques */
+  --accent-green: #10b981;   /*  Verde esmeralda (activo / disponible) */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main) !important;
+  color: #f8fafc !important;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Tarjeta estructurada con borde sutil al interactuar */
+.tech-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+  }
+}
+
+/* Botón primario azul sólido */
+.btn-tech {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    color: #ffffff;
+  }
+}
+
+/* Badge de estado disponible */
+.status-pill {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Botón de CV con presencia activa y contraste limpio */
+.btn-cv-glow {
+  background-color: #0284c7;
+  color: #ffffff !important;
+  border: 1px solid #38bdf8;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #0369a1;
+    border-color: #7dd3fc;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+    transform: translateY(-1px);
+  }
+}
+
+
+/* Enlaces de navegación activos y visibles */
+.nav-link-custom {
+  color: #f8fafc !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+
+  &:hover {
+    color: #38bdf8 !important;
+  }
+
+  /* Línea inferior animada al pasar el cursor */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #38bdf8;
+    transition: width 0.2s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
