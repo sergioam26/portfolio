@@ -6,7 +6,8 @@ export type Language = 'en' | 'es';
   providedIn: 'root',
 })
 export class TranslationService {
-  readonly currentLang = signal<Language>('en');
+  // Carga el idioma guardado previamente o usa 'en' por defecto
+  readonly currentLang = signal<Language>(this.getInitialLanguage());
 
   private readonly translations = {
     en: {
@@ -43,6 +44,8 @@ export class TranslationService {
       },
       projects: {
         title: 'Featured Projects',
+        awardBadge: '🏆 1st Prize Winner',
+        awardDesc: 'Awarded 1st place in the "Municipal Incidents App" Competition (Cantillana Town Hall).',
         urbiTitle: 'UrbiConnect',
         urbiDesc:
           'Cross-platform municipal incident management platform developed for the Cantillana Town Hall. Enables real-time incident reporting, tracking, and communication between citizens and municipal teams.',
@@ -99,6 +102,8 @@ export class TranslationService {
       },
       projects: {
         title: 'Proyectos Destacados',
+        awardBadge: '🏆 1.er Premio Concurso',
+        awardDesc: 'Galardonado con el 1.er premio en el concurso "App Incidencias Municipales" (Ayto. de Cantillana).',
         urbiTitle: 'UrbiConnect',
         urbiDesc:
           'Plataforma multiplataforma de gestión de incidencias municipales desarrollada para el Ayuntamiento de Cantillana. Facilita la comunicación directa entre la ciudadanía y los servicios operativos para el reporte, seguimiento y resolución de incidencias en la vía pública.',
@@ -127,6 +132,22 @@ export class TranslationService {
   readonly t = computed(() => this.translations[this.currentLang()]);
 
   toggleLanguage(): void {
-    this.currentLang.update((lang) => (lang === 'en' ? 'es' : 'en'));
+    this.currentLang.update((lang) => {
+      const nextLang: Language = lang === 'en' ? 'es' : 'en';
+      if (typeof window !== 'undefined' && window.localStorage) {
+        localStorage.setItem('portfolio_lang', nextLang);
+      }
+      return nextLang;
+    });
+  }
+
+  private getInitialLanguage(): Language {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const stored = localStorage.getItem('portfolio_lang') as Language;
+      if (stored === 'en' || stored === 'es') {
+        return stored;
+      }
+    }
+    return 'en';
   }
 }

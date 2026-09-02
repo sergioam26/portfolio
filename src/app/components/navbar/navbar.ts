@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { TranslationService } from '../../services/translation';
 
 @Component({
@@ -10,7 +10,8 @@ import { TranslationService } from '../../services/translation';
 export class Navbar {
   // Control del menú hamburguesa móvil
 
-  protected readonly i18n= inject(TranslationService);
+  protected readonly i18n = inject(TranslationService);
+  private readonly elementRef = inject(ElementRef);
 
   protected readonly isMenuOpen = signal(false);
 
@@ -34,5 +35,11 @@ export class Navbar {
 
   protected closeCvMenu(): void {
     this.isCvMenuOpen.set(false);
+  }
+  @HostListener('document:click', ['$event'])
+  protected onDocumentClick(event: MouseEvent): void {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.closeMenu();
+    }
   }
 }

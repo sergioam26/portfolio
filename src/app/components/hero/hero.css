@@ -1,0 +1,27 @@
+.hero-photo-wrapper {
+  padding: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(19, 29, 49, 0.8));
+  box-shadow: 0 0 25px rgba(2, 132, 199, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-photo-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);
+}
+
+.hero-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border: 3px solid var(--border-card);
+}
+
+@media (max-width: 991.98px) {
+  .hero-photo {
+    width: 210px;
+    height: 210px;
+  }
+}
