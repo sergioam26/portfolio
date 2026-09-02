@@ -1,0 +1,11 @@
+.navbar-toggler {
+  color: #f8fafc;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.6rem;
+  background: transparent;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-cyan);
+}
