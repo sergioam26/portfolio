@@ -1,44 +1,30 @@
 <section id="experience" class="py-5">
   <div class="container">
-    <!-- Encabezado -->
     <div class="mb-5">
-      <h2 class="display-6 fw-bold text-light">Work Experience</h2>
+      <h2 class="display-6 fw-bold text-light">{{ i18n.t().experience.title }}</h2>
     </div>
 
     <div class="row">
       <div class="col-lg-10">
         <div class="tech-card p-4">
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3"
-          >
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
             <div>
-              <h3 class="h4 fw-bold text-light mb-1">Full Stack Developer Intern</h3>
-              <h4 class="h6 text-secondary mb-0">Ayesa · Seville, Spain</h4>
+              <h3 class="h4 fw-bold text-light mb-1">{{ i18n.t().experience.role }}</h3>
+              <h4 class="h6 text-secondary mb-0">{{ i18n.t().experience.company }}</h4>
             </div>
-
-            <span
-              class="badge bg-secondary bg-opacity-25 text-light border border-secondary border-opacity-25 mt-2 mt-md-0 align-self-start align-self-md-center"
-            >
-              Apr 2025 – May 2025 · Feb 2026 – May 2026
+            <span class="badge bg-secondary bg-opacity-25 text-light border border-secondary border-opacity-25 mt-2 mt-md-0 align-self-start align-self-md-center">
+              {{ i18n.t().experience.period }}
             </span>
           </div>
-       
-<!-- Responsabilidades principales -->
 
-<ul class="text-light opacity-75 mb-4">
-    <li class="mb-2">Developed and maintained internal enterprise web frontends using <strong class="text-light">Angular</strong>.</li>
-<li class="mb-2">
-              Collaborated on backend business logic with <strong class="text-light">Java &amp; Spring Boot</strong>, querying and managing relational databases (<strong class="text-light">MySQL &amp; PostgreSQL</strong>).
-            </li>
-            <li class="mb-2">
-              Maintained version control workflows and collaborative branching with <strong class="text-light">Git</strong>.
-            </li>
-            <li>
-              Provided technical support and bug tracking in live production environments.
-            </li>
-</ul>
+          <ul class="text-light opacity-75 mb-4">
+            <li class="mb-2" [innerHTML]="i18n.t().experience.bullet1"></li>
+            <li class="mb-2" [innerHTML]="i18n.t().experience.bullet2"></li>
+            <li class="mb-2" [innerHTML]="i18n.t().experience.bullet3"></li>
+            <li [innerHTML]="i18n.t().experience.bullet4"></li>
+          </ul>
 
-<div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap gap-2">
             <span class="badge bg-dark text-info border border-secondary">Java</span>
             <span class="badge bg-dark text-info border border-secondary">Spring Boot</span>
             <span class="badge bg-dark text-info border border-secondary">Angular</span>
@@ -46,10 +32,8 @@
             <span class="badge bg-dark text-info border border-secondary">MySQL</span>
             <span class="badge bg-dark text-info border border-secondary">Git</span>
           </div>
-
-
+        </div>
       </div>
     </div>
   </div>
-   </div>
 </section>

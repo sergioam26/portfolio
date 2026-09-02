@@ -5,7 +5,7 @@
       &lt;sergioam26 /&gt;
     </a>
 
-    <!-- Botón hamburguesa para móviles -->
+    <!-- Botón hamburguesa -->
     <button
       class="navbar-toggler border-secondary text-light shadow-none"
       type="button"
@@ -18,98 +18,77 @@
 
     <!-- Menú colapsable -->
     <div class="collapse navbar-collapse" [class.show]="isMenuOpen()" id="navbarNav">
-      <!-- Enlaces de navegación centrales -->
+      <!-- Enlaces centrales -->
       <ul class="navbar-nav mx-auto my-3 my-lg-0 gap-lg-4 text-center">
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="#about" (click)="closeMenu()">About</a>
+          <a class="nav-link nav-link-custom" href="#about" (click)="closeMenu()">{{ i18n.t().nav.about }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="#experience" (click)="closeMenu()">Experience</a>
+          <a class="nav-link nav-link-custom" href="#experience" (click)="closeMenu()">{{ i18n.t().nav.experience }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="#projects" (click)="closeMenu()">Projects</a>
+          <a class="nav-link nav-link-custom" href="#projects" (click)="closeMenu()">{{ i18n.t().nav.projects }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="#skills" (click)="closeMenu()">Skills</a>
+          <a class="nav-link nav-link-custom" href="#skills" (click)="closeMenu()">{{ i18n.t().nav.skills }}</a>
         </li>
       </ul>
 
-      <!-- Enlaces externos y botón de CV -->
+      <!-- Acciones de cabecera -->
       <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-3 pb-3 pb-lg-0">
+        <!-- Redes -->
         <div class="d-flex align-items-center gap-3">
-          <a
-            href="https://github.com/sergioam26"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-light fs-5 opacity-75 hover-opacity-100"
-            title="GitHub"
-          >
+          <a href="https://github.com/sergioam26" target="_blank" rel="noopener noreferrer" class="text-light fs-5 opacity-75 hover-opacity-100" title="GitHub">
             <i class="bi bi-github"></i>
           </a>
-          <a
-            href="https://linkedin.com/in/sergio-algarrada-miranda-a5b353293"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-light fs-5 opacity-75 hover-opacity-100"
-            title="LinkedIn"
-          >
+          <a href="https://linkedin.com/in/sergio-algarrada-miranda-a5b353293" target="_blank" rel="noopener noreferrer" class="text-light fs-5 opacity-75 hover-opacity-100" title="LinkedIn">
             <i class="bi bi-linkedin"></i>
           </a>
         </div>
 
-    <!--Selector de CV-->
+        <!-- Botón de cambio de idioma -->
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-sm px-2 py-1 text-light d-flex align-items-center gap-1 border-opacity-50"
+          (click)="i18n.toggleLanguage()"
+          [title]="i18n.currentLang() === 'en' ? 'Cambiar a Español' : 'Switch to English'"
+        >
+          <i class="bi bi-translate text-info"></i>
+          <span class="fw-bold">{{ i18n.currentLang() === 'en' ? 'ES' : 'EN' }}</span>
+        </button>
 
-    <div class="dropdown position-relative">
-     <button
-    type="button"
-    class="btn btn-cv-glow btn-sm px-3 py-1 d-flex align-items-center gap-2"
-    (click)="toggleCvMenu($event)"
-    [attr.aria-expanded]="isCvMenuOpen()">
+        <!-- Selector de CV -->
+        <div class="dropdown position-relative">
+          <button
+            type="button"
+            class="btn btn-cv-glow btn-sm px-3 py-1 d-flex align-items-center gap-2"
+            (click)="toggleCvMenu($event)"
+            [attr.aria-expanded]="isCvMenuOpen()"
+          >
+            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+            <span>{{ i18n.t().nav.resume }}</span>
+            <i class="bi bi-chevron-down small" [class.rotate-180]="isCvMenuOpen()"></i>
+          </button>
 
-    <i class="bi bi-file-earmark-arrow-down-fill"></i>
-    <span>Resume / CV</span>
-    <i class="bi bi-chevron-down small" [class.rotate-180]="isCvMenuOpen()"></i>
-    
-  </button>
-
-  <!-- Menú de opciones de idioma -->
-
-  <!-- src/app/components/navbar/navbar.html -->
-<ul
-  class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow-lg py-2 mt-2 border"
-  [class.show]="isCvMenuOpen()"
-  style="background-color: var(--bg-card); border-color: var(--border-card) !important;"
->
-  <li>
-    <a
-      class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent"
-      href="cv-sergio-algarrada-es.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      (click)="closeMenu()"
-    >
-      <span class="badge bg-secondary bg-opacity-50 text-uppercase">ES</span>
-      <span>Español (PDF)</span>
-    </a>
-  </li>
-  <li>
-    <a
-      class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent"
-      href="cv-sergio-algarrada-en.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      (click)="closeMenu()"
-    >
-      <span class="badge bg-secondary bg-opacity-50 text-uppercase">EN</span>
-      <span>English (PDF)</span>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-
-
+          <ul
+            class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow-lg py-2 mt-2 border"
+            [class.show]="isCvMenuOpen()"
+            style="background-color: var(--bg-card); border-color: var(--border-card) !important;"
+          >
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent" href="cv-sergio-algarrada-es.pdf" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">
+                <span class="badge bg-secondary bg-opacity-50 text-uppercase">ES</span>
+                <span>{{ i18n.t().nav.resumeEs }}</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent" href="cv-sergio-algarrada-en.pdf" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">
+                <span class="badge bg-secondary bg-opacity-50 text-uppercase">EN</span>
+                <span>{{ i18n.t().nav.resumeEn }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

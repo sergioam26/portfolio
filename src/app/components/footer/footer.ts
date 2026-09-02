@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.css',
   templateUrl: './footer.html',
 })
-export class Footer {}
+export class Footer {
+  protected readonly i18n= inject(TranslationService)
+}

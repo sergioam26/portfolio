@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { TranslationService } from '../../services/translation';
 
 @Component({
   imports: [],
@@ -8,6 +9,8 @@ import { Component, signal } from '@angular/core';
 })
 export class Navbar {
   // Control del menú hamburguesa móvil
+
+  protected readonly i18n= inject(TranslationService);
 
   protected readonly isMenuOpen = signal(false);
 

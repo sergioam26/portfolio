@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation';
 
 @Component({
   imports: [],
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './skills.css',
   templateUrl: './skills.html',
 })
-export class Skills {}
+export class Skills {
+  protected readonly i18n = inject(TranslationService);
+
+}
