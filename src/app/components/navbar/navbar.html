@@ -57,10 +57,59 @@
           </a>
         </div>
 
-        <a href="#" class="btn btn-cv-glow btn-sm px-3 py-1 d-flex align-items-center gap-2">
-          <i class="bi bi-file-earmark-arrow-down-fill"></i>
-          <span>Resume / CV</span>
-        </a>
+    <!--Selector de CV-->
+
+    <div class="dropdown position-relative">
+     <button
+    type="button"
+    class="btn btn-cv-glow btn-sm px-3 py-1 d-flex align-items-center gap-2"
+    (click)="toggleCvMenu($event)"
+    [attr.aria-expanded]="isCvMenuOpen()">
+
+    <i class="bi bi-file-earmark-arrow-down-fill"></i>
+    <span>Resume / CV</span>
+    <i class="bi bi-chevron-down small" [class.rotate-180]="isCvMenuOpen()"></i>
+    
+  </button>
+
+  <!-- Menú de opciones de idioma -->
+
+  <!-- src/app/components/navbar/navbar.html -->
+<ul
+  class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow-lg py-2 mt-2 border"
+  [class.show]="isCvMenuOpen()"
+  style="background-color: var(--bg-card); border-color: var(--border-card) !important;"
+>
+  <li>
+    <a
+      class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent"
+      href="cv-sergio-algarrada-es.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      (click)="closeMenu()"
+    >
+      <span class="badge bg-secondary bg-opacity-50 text-uppercase">ES</span>
+      <span>Español (PDF)</span>
+    </a>
+  </li>
+  <li>
+    <a
+      class="dropdown-item d-flex align-items-center gap-2 py-2 text-light hover-accent"
+      href="cv-sergio-algarrada-en.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      (click)="closeMenu()"
+    >
+      <span class="badge bg-secondary bg-opacity-50 text-uppercase">EN</span>
+      <span>English (PDF)</span>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+
+
       </div>
     </div>
   </div>

@@ -9,3 +9,24 @@
   outline: none;
   box-shadow: 0 0 0 2px var(--accent-cyan);
 }
+
+/* Rotación suave de la flecha al abrir el desplegable */
+.bi-chevron-down {
+  transition: transform 0.2s ease;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Resalte al pasar el cursor sobre las opciones */
+.dropdown-item.hover-accent:hover {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--accent-cyan) !important;
+}
+
+/* Fuerza la alineación al extremo derecho sin depender de Popper/Bootstrap JS */
+.navbar .dropdown-menu-end {
+  right: 0 !important;
+  left: 0 !important;
+}
