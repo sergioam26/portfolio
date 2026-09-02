@@ -27,6 +27,7 @@ export class TranslationService {
         desc: 'Focused on building robust web solutions with <strong class="text-light">Java, Spring Boot, and Angular</strong>, alongside cross-platform projects using <strong class="text-light">Flutter and Firebase</strong>. Experienced with production workflows at Ayesa and clean software development practices.',
         btnProjects: 'View Projects',
         btnExperience: 'Work Experience',
+        btnContact: 'Contact Me',
       },
       experience: {
         title: 'Work Experience',
@@ -45,7 +46,8 @@ export class TranslationService {
       projects: {
         title: 'Featured Projects',
         awardBadge: '🏆 1st Prize Winner',
-        awardDesc: 'Awarded 1st place in the "Municipal Incidents App" Competition (Cantillana Town Hall).',
+        awardDesc:
+          'Awarded 1st place in the "Municipal Incidents App" Competition (Cantillana Town Hall).',
         urbiTitle: 'UrbiConnect',
         urbiDesc:
           'Cross-platform municipal incident management platform developed for the Cantillana Town Hall. Enables real-time incident reporting, tracking, and communication between citizens and municipal teams.',
@@ -57,12 +59,18 @@ export class TranslationService {
         badgeAi: 'AI-Assisted Dev',
       },
       skills: {
-        title: 'Technical Skills',
-        backend: 'Backend',
-        frontend: 'Frontend & Mobile',
-        databases: 'Databases & Cloud',
-        tools: 'Tools & Practices',
-      },
+  title: 'Technical Skills',
+  backend: 'Backend',
+  frontend: 'Frontend & Mobile',
+  databases: 'Databases & Cloud',
+  tools: 'Tools & Practices',
+  certTitle: 'Official Certifications & Languages',
+  certOpenWebinars: '+20 Technical Certifications',
+  certOpenWebinarsSub: 'Java, Spring Boot, GitFlow, Agile & Testing (OpenWebinars)',
+  certEnglish: 'English B2 – Cambridge Certified',
+  certEnglishSub: 'Fluent professional communication',
+  btnLinkedIn: 'View all certifications on LinkedIn',
+},
       footer: {
         copyright: '© 2026 Sergio Algarrada Miranda. All rights reserved.',
         builtWith: 'Built with Angular & Bootstrap',
@@ -85,6 +93,7 @@ export class TranslationService {
         desc: 'Especializado en el desarrollo de soluciones web robustas con <strong class="text-light">Java, Spring Boot y Angular</strong>, y aplicaciones multiplataforma con <strong class="text-light">Flutter y Firebase</strong>. Con experiencia real en entornos de producción en Ayesa y buenas prácticas de desarrollo.',
         btnProjects: 'Ver Proyectos',
         btnExperience: 'Experiencia Laboral',
+        btnContact: 'Contactar',
       },
       experience: {
         title: 'Experiencia Laboral',
@@ -103,7 +112,8 @@ export class TranslationService {
       projects: {
         title: 'Proyectos Destacados',
         awardBadge: '🏆 1.er Premio Concurso',
-        awardDesc: 'Galardonado con el 1.er premio en el concurso "App Incidencias Municipales" (Ayto. de Cantillana).',
+        awardDesc:
+          'Galardonado con el 1.er premio en el concurso "App Incidencias Municipales" (Ayto. de Cantillana).',
         urbiTitle: 'UrbiConnect',
         urbiDesc:
           'Plataforma multiplataforma de gestión de incidencias municipales desarrollada para el Ayuntamiento de Cantillana. Facilita la comunicación directa entre la ciudadanía y los servicios operativos para el reporte, seguimiento y resolución de incidencias en la vía pública.',
@@ -115,13 +125,19 @@ export class TranslationService {
           'Integración de mapas interactivos y geolocalización en tiempo real mediante la <strong class="text-light">Google Maps API</strong>.',
         badgeAi: 'Desarrollo Asistido por IA',
       },
-      skills: {
-        title: 'Habilidades Técnicas',
-        backend: 'Backend',
-        frontend: 'Frontend y Móvil',
-        databases: 'Bases de Datos y Cloud',
-        tools: 'Herramientas y Metodologías',
-      },
+     skills: {
+  title: 'Habilidades Técnicas',
+  backend: 'Backend',
+  frontend: 'Frontend y Móvil',
+  databases: 'Bases de Datos y Cloud',
+  tools: 'Herramientas y Metodologías',
+  certTitle: 'Certificaciones Oficiales e Idiomas',
+  certOpenWebinars: '+20 Certificaciones Técnicas',
+  certOpenWebinarsSub: 'Java, Spring Boot, GitFlow, Agile y Testing (OpenWebinars)',
+  certEnglish: 'Inglés B2 – Certificado por Cambridge',
+  certEnglishSub: 'Comunicación técnica y profesional fluida',
+  btnLinkedIn: 'Ver todas las certificaciones en LinkedIn',
+},
       footer: {
         copyright: '© 2026 Sergio Algarrada Miranda. Todos los derechos reservados.',
         builtWith: 'Desarrollado con Angular y Bootstrap',

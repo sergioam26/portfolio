@@ -4,7 +4,8 @@
       <h2 class="display-6 fw-bold text-light">{{ i18n.t().skills.title }}</h2>
     </div>
 
-    <div class="row g-4">
+    <!-- 4 Tarjetas principales simétricas -->
+    <div class="row g-4 mb-4">
       <!-- 1. Backend -->
       <div class="col-md-6 col-lg-3">
         <div class="tech-card p-4 h-100">
@@ -67,6 +68,49 @@
             <span class="badge bg-dark border border-secondary text-light">Scrum</span>
             <span class="badge bg-dark border border-secondary text-light">Javadoc &amp; Markdown</span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra compacta de Acreditaciones -->
+    <div class="tech-card p-4">
+      <div class="row align-items-center gy-3">
+        <div class="col-lg-8">
+          <div class="row g-3">
+            <!-- OpenWebinars -->
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-patch-check-fill fs-2" style="color: var(--accent-cyan);"></i>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-0">{{ i18n.t().skills.certOpenWebinars }}</h4>
+                  <p class="small text-secondary mb-0">{{ i18n.t().skills.certOpenWebinarsSub }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cambridge B2 -->
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-award-fill fs-2" style="color: var(--accent-green);"></i>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-0">{{ i18n.t().skills.certEnglish }}</h4>
+                  <p class="small text-secondary mb-0">{{ i18n.t().skills.certEnglishSub }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón a LinkedIn -->
+        <div class="col-lg-4 text-lg-end">
+          <a
+            href="https://linkedin.com/in/sergio-algarrada-miranda-a5b353293"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline-light btn-sm px-3 py-2"
+          >
+            <i class="bi bi-linkedin text-info me-1"></i>
+            {{ i18n.t().skills.btnLinkedIn }}
+          </a>
         </div>
       </div>
     </div>

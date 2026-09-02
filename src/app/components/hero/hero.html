@@ -13,13 +13,17 @@
         <p class="lead text-light opacity-75 mb-4" style="line-height: 1.7;" [innerHTML]="i18n.t().hero.desc"></p>
 
         <div class="d-flex flex-wrap gap-3">
-          <a href="#projects" class="btn btn-tech px-4 py-2">
-            {{ i18n.t().hero.btnProjects }} <i class="bi bi-arrow-right ms-1"></i>
-          </a>
-          <a href="#experience" class="btn btn-outline-light px-4 py-2">
-            {{ i18n.t().hero.btnExperience }}
-          </a>
-        </div>
+  <a href="#projects" class="btn btn-tech px-4 py-2">
+    {{ i18n.t().hero.btnProjects }} <i class="bi bi-arrow-right ms-1"></i>
+  </a>
+  <a href="#experience" class="btn btn-outline-light px-4 py-2">
+    {{ i18n.t().hero.btnExperience }}
+  </a>
+  <a href="mailto:sergioalgmir@gmail.com" class="btn btn-outline-info px-3 py-2 d-flex align-items-center gap-2">
+    <i class="bi bi-envelope-fill"></i>
+    <span>{{ i18n.t().hero.btnContact }}</span>
+  </a>
+</div>
       </div>
 
       <!-- Columna de la fotografía -->
